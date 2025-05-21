@@ -1,0 +1,967 @@
+{
+    "meta": {
+        "version": "3.5.0",
+        "report_json_url": "https://raw.githubusercontent.com/eosc-synergy/meteo-gfs.git.assess.sqaaas/main/.report/assessment_output.json",
+        "report_permalink": "https://sqaaas.eosc-synergy.eu/full-assessment/report/https://raw.githubusercontent.com/eosc-synergy/meteo-gfs.git.assess.sqaaas/main/.report/assessment_output.json",
+        "timestamp": 1747811981.2334774
+    },
+    "repository": [
+        {
+            "url": "https://gitlab.geo3bcn.csic.es/dtgeo_geo3bcn/dtc-v2/meteo-gfs.git",
+            "name": "dtgeo_geo3bcn/dtc-v2/meteo-gfs",
+            "tag": "main",
+            "commit_id": "bf3247c4bf3f55f475fc20f30136bcb4f3b645e2",
+            "is_main_repo": true,
+            "badge_status": "no_badge"
+        }
+    ],
+    "report": {
+        "QC.Acc": {
+            "valid": true,
+            "subcriteria": {
+                "QC.Acc01": {
+                    "description": "Is the source code managed with a Version Control System?",
+                    "requirement_level": "MUST",
+                    "hint": "The source code shall be managed with Git and remain publicly available for this criterion to be successful. Please check <a href=\"https://git-scm.com/book/es/v2\" target=\"_blank\">Pro Git</a> docs about how to get started using Git tool. Guidelines provided by the most popular social coding platforms (<a href=\"https://docs.github.com/get-started\" target=\"_blank\">GitHub</a>, <a href=\"https://about.gitlab.com/get-started/\" target=\"_blank\">GitLab</a>) are also a good starting point",
+                    "evidence": [
+                        {
+                            "valid": true,
+                            "message": "Source code uses Git for version control",
+                            "plugin": {
+                                "name": "report2sqaaas-plugin-boolean",
+                                "version": "2.1.0"
+                            },
+                            "tool": {
+                                "name": "git",
+                                "lang": "scm",
+                                "version": "2.34.1",
+                                "docker": {
+                                    "image": "bitnami/git:2.34.1",
+                                    "reviewed": "2021-12-30"
+                                },
+                                "ci": {
+                                    "name": "QC.Acc gitlab.geo3bcn.csic.es/dtgeo_geo3bcn/dtc-v2/meteo-gfs git",
+                                    "status": "SUCCESS",
+                                    "stdout_command": [
+                                        "git rev-parse --is-inside-work-tree "
+                                    ],
+                                    "stdout_text": "true",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/meteo-gfs.git.assess.sqaaas/job/main/1/execution/node/34/log?consoleFull"
+                                },
+                                "level": "REQUIRED",
+                                "build_repo": "https://github.com/eosc-synergy/meteo-gfs.git.assess.sqaaas"
+                            },
+                            "standard": {
+                                "title": "A set of Common Software Quality Assurance Baseline Criteria for Research Projects",
+                                "version": "v4.0",
+                                "url": "https://github.com/indigo-dc/sqa-baseline/releases/tag/v4.0"
+                            },
+                            "data_unstructured": {}
+                        }
+                    ],
+                    "valid": true
+                }
+            },
+            "coverage": {
+                "percentage": 100,
+                "total_subcriteria": 1,
+                "success_subcriteria": 1
+            }
+        },
+        "QC.Doc": {
+            "valid": false,
+            "subcriteria": {
+                "QC.Doc06.1": {
+                    "description": "Is the software scope outlined in the code repository?",
+                    "requirement_level": "MUST",
+                    "hint": "A README file presents your software to the audience interested in your software project. Several online sites simplify the task of creating the README file, such as <a href=\"https://www.makeareadme.com/\" target=\"_blank\">Make a README</a> or <a href=\"https://readme.so/\" target=\"_blank\">readme.so</a> sites. Be sure to add it to the code repository's root path",
+                    "evidence": [
+                        {
+                            "valid": true,
+                            "message": "A README file is present in the code repository",
+                            "plugin": {
+                                "name": "report2sqaaas-plugin-find_doc_files",
+                                "version": "2.1.0"
+                            },
+                            "tool": {
+                                "name": "find_doc_files.py",
+                                "lang": "Contribution-enabling Files",
+                                "version": "latest",
+                                "docker": {
+                                    "dockerfile": "QC.Doc/Dockerfile",
+                                    "reviewed": "2022-01-26"
+                                },
+                                "ci": {
+                                    "name": "QC.Doc gitlab.geo3bcn.csic.es/dtgeo_geo3bcn/dtc-v2/meteo-gfs find_doc_files.py",
+                                    "status": "SUCCESS",
+                                    "stdout_command": [
+                                        "find_doc_files.py --file_type all"
+                                    ],
+                                    "stdout_text": "{\"README\": [{\"file_name\": \"README.md\", \"size\": 3959}], \"CODE_OF_CONDUCT\": [], \"CONTRIBUTING\": [{\"file_name\": \"CONTRIBUTING.md\", \"size\": 1877}]}",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/meteo-gfs.git.assess.sqaaas/job/main/1/execution/node/43/log?consoleFull"
+                                },
+                                "level": "REQUIRED",
+                                "build_repo": "https://github.com/eosc-synergy/meteo-gfs.git.assess.sqaaas"
+                            },
+                            "standard": {
+                                "title": "A set of Common Software Quality Assurance Baseline Criteria for Research Projects",
+                                "version": "v4.0",
+                                "url": "https://github.com/indigo-dc/sqa-baseline/releases/tag/v4.0"
+                            },
+                            "data_unstructured": {
+                                "README": [
+                                    {
+                                        "file_name": "README.md",
+                                        "size": 3959
+                                    }
+                                ],
+                                "CODE_OF_CONDUCT": [],
+                                "CONTRIBUTING": [
+                                    {
+                                        "file_name": "CONTRIBUTING.md",
+                                        "size": 1877
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "valid": true
+                },
+                "QC.Doc06.3": {
+                    "description": "Does the project establish a code of conduct for its participants?",
+                    "requirement_level": "MUST",
+                    "hint": "A CODE_OF_CONDUCT file sets the path for a constructive, respectful and positive atmosphere among all the contributors in your software project. Of course you can define your own, but in case you want to rely on external and widely-adopted code of conducts check out some of the most popular ones: <a href=\"https://contributor-covenant.org/\" target=\"_blank\">Contributor Covenant</a> or <a href=\"https://web.archive.org/web/20200330154000/http://citizencodeofconduct.org/\" target=\"_blank\">Citizen Code of Conduct</a>",
+                    "evidence": [
+                        {
+                            "valid": false,
+                            "message": "A CODE_OF_CONDUCT file is not present in the code repository",
+                            "plugin": {
+                                "name": "report2sqaaas-plugin-find_doc_files",
+                                "version": "2.1.0"
+                            },
+                            "tool": {
+                                "name": "find_doc_files.py",
+                                "lang": "Contribution-enabling Files",
+                                "version": "latest",
+                                "docker": {
+                                    "dockerfile": "QC.Doc/Dockerfile",
+                                    "reviewed": "2022-01-26"
+                                },
+                                "ci": {
+                                    "name": "QC.Doc gitlab.geo3bcn.csic.es/dtgeo_geo3bcn/dtc-v2/meteo-gfs find_doc_files.py",
+                                    "status": "SUCCESS",
+                                    "stdout_command": [
+                                        "find_doc_files.py --file_type all"
+                                    ],
+                                    "stdout_text": "{\"README\": [{\"file_name\": \"README.md\", \"size\": 3959}], \"CODE_OF_CONDUCT\": [], \"CONTRIBUTING\": [{\"file_name\": \"CONTRIBUTING.md\", \"size\": 1877}]}",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/meteo-gfs.git.assess.sqaaas/job/main/1/execution/node/43/log?consoleFull"
+                                },
+                                "level": "REQUIRED",
+                                "build_repo": "https://github.com/eosc-synergy/meteo-gfs.git.assess.sqaaas"
+                            },
+                            "standard": {
+                                "title": "A set of Common Software Quality Assurance Baseline Criteria for Research Projects",
+                                "version": "v4.0",
+                                "url": "https://github.com/indigo-dc/sqa-baseline/releases/tag/v4.0"
+                            },
+                            "data_unstructured": {
+                                "README": [
+                                    {
+                                        "file_name": "README.md",
+                                        "size": 3959
+                                    }
+                                ],
+                                "CODE_OF_CONDUCT": [],
+                                "CONTRIBUTING": [
+                                    {
+                                        "file_name": "CONTRIBUTING.md",
+                                        "size": 1877
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "valid": false,
+                    "required_for_next_level_badge": true
+                },
+                "QC.Doc06.2": {
+                    "description": "Is there a clear path or guidelines on how to contribute to the code?",
+                    "requirement_level": "MUST",
+                    "hint": "A CONTRIBUTING file shall be present in the root path of the code repository describing the expected workflow to follow when adding contributions. Please check <a href=\"https://mozillascience.github.io/working-open-workshop/contributing/\" target=\"_blank\">Mozilla's guidelines</a> and <a href=\"https://github.com/github/docs/blob/main/CONTRIBUTING.md\" target=\"_blank\">GitHub's CONTRIBUTING.md example</a> to get inspired on how to write a good CONTRIBUTING file",
+                    "evidence": [
+                        {
+                            "valid": true,
+                            "message": "A CONTRIBUTING file is present in the code repository",
+                            "plugin": {
+                                "name": "report2sqaaas-plugin-find_doc_files",
+                                "version": "2.1.0"
+                            },
+                            "tool": {
+                                "name": "find_doc_files.py",
+                                "lang": "Contribution-enabling Files",
+                                "version": "latest",
+                                "docker": {
+                                    "dockerfile": "QC.Doc/Dockerfile",
+                                    "reviewed": "2022-01-26"
+                                },
+                                "ci": {
+                                    "name": "QC.Doc gitlab.geo3bcn.csic.es/dtgeo_geo3bcn/dtc-v2/meteo-gfs find_doc_files.py",
+                                    "status": "SUCCESS",
+                                    "stdout_command": [
+                                        "find_doc_files.py --file_type all"
+                                    ],
+                                    "stdout_text": "{\"README\": [{\"file_name\": \"README.md\", \"size\": 3959}], \"CODE_OF_CONDUCT\": [], \"CONTRIBUTING\": [{\"file_name\": \"CONTRIBUTING.md\", \"size\": 1877}]}",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/meteo-gfs.git.assess.sqaaas/job/main/1/execution/node/43/log?consoleFull"
+                                },
+                                "level": "REQUIRED",
+                                "build_repo": "https://github.com/eosc-synergy/meteo-gfs.git.assess.sqaaas"
+                            },
+                            "standard": {
+                                "title": "A set of Common Software Quality Assurance Baseline Criteria for Research Projects",
+                                "version": "v4.0",
+                                "url": "https://github.com/indigo-dc/sqa-baseline/releases/tag/v4.0"
+                            },
+                            "data_unstructured": {
+                                "README": [
+                                    {
+                                        "file_name": "README.md",
+                                        "size": 3959
+                                    }
+                                ],
+                                "CODE_OF_CONDUCT": [],
+                                "CONTRIBUTING": [
+                                    {
+                                        "file_name": "CONTRIBUTING.md",
+                                        "size": 1877
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "valid": true
+                },
+                "QC.Doc01.1": {
+                    "description": "Are docs managed in the same repository as code?",
+                    "requirement_level": "MAY",
+                    "hint": "This subcriterion will succeed if the documentation files exist on the same repository as the source code, e.g. under a <code>docs/</code> folder",
+                    "evidence": [
+                        {
+                            "valid": true,
+                            "message": "Documentation resides in the same repository as code",
+                            "plugin": {
+                                "name": "report2sqaaas-plugin-boolean",
+                                "version": "2.1.0"
+                            },
+                            "tool": {
+                                "name": "git",
+                                "lang": null,
+                                "version": null,
+                                "docker": null,
+                                "ci": {
+                                    "name": "QC.Doc gitlab.geo3bcn.csic.es/dtgeo_geo3bcn/dtc-v2/meteo-gfs git",
+                                    "status": "SUCCESS",
+                                    "stdout_command": [
+                                        "git rev-parse --is-inside-work-tree "
+                                    ],
+                                    "stdout_text": "true",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/meteo-gfs.git.assess.sqaaas/job/main/1/execution/node/52/log?consoleFull"
+                                },
+                                "level": "REQUIRED",
+                                "build_repo": "https://github.com/eosc-synergy/meteo-gfs.git.assess.sqaaas"
+                            },
+                            "standard": {
+                                "title": "A set of Common Software Quality Assurance Baseline Criteria for Research Projects",
+                                "version": "v4.0",
+                                "url": "https://github.com/indigo-dc/sqa-baseline/releases/tag/v4.0"
+                            },
+                            "data_unstructured": {}
+                        }
+                    ],
+                    "valid": true
+                },
+                "QC.Doc02.X": {
+                    "description": "Are docs following a style for the Markdown markup language?",
+                    "requirement_level": "MAY",
+                    "hint": "When using a docs-as-code approach, the style of the markup language is being checked. SQAaaS relies on <a href=\"https://github.com/markdownlint/markdownlint/\" target=\"_blank\">markdownlint</a> for Markdown files and <a href=\"https://github.com/twolfson/restructuredtext-lint/\" target=\"_blank\">restructuredtext-lint</a> for reStructuredText",
+                    "evidence": [
+                        {
+                            "valid": false,
+                            "message": "Docs are not fully compliant with markdownlint standard",
+                            "plugin": {
+                                "name": "report2sqaaas-plugin-markdownlint",
+                                "version": "2.1.0"
+                            },
+                            "tool": {
+                                "name": "markdownlint",
+                                "lang": "Markdown",
+                                "version": "0.11.0",
+                                "docker": {
+                                    "dockerfile": "QC.Doc/markdownlint/Dockerfile",
+                                    "reviewed": "1970-01-01"
+                                },
+                                "ci": {
+                                    "name": "QC.Doc gitlab.geo3bcn.csic.es/dtgeo_geo3bcn/dtc-v2/meteo-gfs markdownlint",
+                                    "status": "FAILED",
+                                    "stdout_command": [
+                                        "mdl --json  ."
+                                    ],
+                                    "stdout_text": "[{\"filename\":\"./CODE_OF_CONDUTC.md\",\"line\":119,\"rule\":\"MD012\",\"aliases\":[\"no-multiple-blanks\"],\"description\":\"Multiple consecutive blank lines\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md012---multiple-consecutive-blank-lines\"},{\"filename\":\"./CONTRIBUTING.md\",\"line\":39,\"rule\":\"MD012\",\"aliases\":[\"no-multiple-blanks\"],\"description\":\"Multiple consecutive blank lines\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md012---multiple-consecutive-blank-lines\"},{\"filename\":\"./CONTRIBUTING.md\",\"line\":7,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./CONTRIBUTING.md\",\"line\":12,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./CONTRIBUTING.md\",\"line\":13,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./CONTRIBUTING.md\",\"line\":14,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./CONTRIBUTING.md\",\"line\":15,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./CONTRIBUTING.md\",\"line\":16,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./CONTRIBUTING.md\",\"line\":23,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./CONTRIBUTING.md\",\"line\":28,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./CONTRIBUTING.md\",\"line\":30,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./CONTRIBUTING.md\",\"line\":34,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./CONTRIBUTING.md\",\"line\":35,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./CONTRIBUTING.md\",\"line\":36,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./README.md\",\"line\":32,\"rule\":\"MD009\",\"aliases\":[\"no-trailing-spaces\"],\"description\":\"Trailing spaces\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md009---trailing-spaces\"},{\"filename\":\"./README.md\",\"line\":34,\"rule\":\"MD009\",\"aliases\":[\"no-trailing-spaces\"],\"description\":\"Trailing spaces\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md009---trailing-spaces\"},{\"filename\":\"./README.md\",\"line\":36,\"rule\":\"MD009\",\"aliases\":[\"no-trailing-spaces\"],\"description\":\"Trailing spaces\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md009---trailing-spaces\"},{\"filename\":\"./README.md\",\"line\":37,\"rule\":\"MD009\",\"aliases\":[\"no-trailing-spaces\"],\"description\":\"Trailing spaces\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md009---trailing-spaces\"},{\"filename\":\"./README.md\",\"line\":55,\"rule\":\"MD009\",\"aliases\":[\"no-trailing-spaces\"],\"description\":\"Trailing spaces\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md009---trailing-spaces\"},{\"filename\":\"./README.md\",\"line\":67,\"rule\":\"MD009\",\"aliases\":[\"no-trailing-spaces\"],\"description\":\"Trailing spaces\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md009---trailing-spaces\"},{\"filename\":\"./README.md\",\"line\":81,\"rule\":\"MD009\",\"aliases\":[\"no-trailing-spaces\"],\"description\":\"Trailing spaces\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md009---trailing-spaces\"},{\"filename\":\"./README.md\",\"line\":84,\"rule\":\"MD009\",\"aliases\":[\"no-trailing-spaces\"],\"description\":\"Trailing spaces\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md009---trailing-spaces\"},{\"filename\":\"./README.md\",\"line\":88,\"rule\":\"MD009\",\"aliases\":[\"no-trailing-spaces\"],\"description\":\"Trailing spaces\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md009---trailing-spaces\"},{\"filename\":\"./README.md\",\"line\":94,\"rule\":\"MD009\",\"aliases\":[\"no-trailing-spaces\"],\"description\":\"Trailing spaces\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md009---trailing-spaces\"},{\"filename\":\"./README.md\",\"line\":3,\"rule\":\"MD012\",\"aliases\":[\"no-multiple-blanks\"],\"description\":\"Multiple consecutive blank lines\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md012---multiple-consecutive-blank-lines\"},{\"filename\":\"./README.md\",\"line\":9,\"rule\":\"MD012\",\"aliases\":[\"no-multiple-blanks\"],\"description\":\"Multiple consecutive blank lines\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md012---multiple-consecutive-blank-lines\"},{\"filename\":\"./README.md\",\"line\":10,\"rule\":\"MD012\",\"aliases\":[\"no-multiple-blanks\"],\"description\":\"Multiple consecutive blank lines\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md012---multiple-consecutive-blank-lines\"},{\"filename\":\"./README.md\",\"line\":17,\"rule\":\"MD012\",\"aliases\":[\"no-multiple-blanks\"],\"description\":\"Multiple consecutive blank lines\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md012---multiple-consecutive-blank-lines\"},{\"filename\":\"./README.md\",\"line\":18,\"rule\":\"MD012\",\"aliases\":[\"no-multiple-blanks\"],\"description\":\"Multiple consecutive blank lines\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md012---multiple-consecutive-blank-lines\"},{\"filename\":\"./README.md\",\"line\":19,\"rule\":\"MD012\",\"aliases\":[\"no-multiple-blanks\"],\"description\":\"Multiple consecutive blank lines\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md012---multiple-consecutive-blank-lines\"},{\"filename\":\"./README.md\",\"line\":23,\"rule\":\"MD012\",\"aliases\":[\"no-multiple-blanks\"],\"description\":\"Multiple consecutive blank lines\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md012---multiple-consecutive-blank-lines\"},{\"filename\":\"./README.md\",\"line\":115,\"rule\":\"MD012\",\"aliases\":[\"no-multiple-blanks\"],\"description\":\"Multiple consecutive blank lines\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md012---multiple-consecutive-blank-lines\"},{\"filename\":\"./README.md\",\"line\":5,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./README.md\",\"line\":62,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./README.md\",\"line\":77,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./README.md\",\"line\":82,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./README.md\",\"line\":84,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./README.md\",\"line\":88,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./README.md\",\"line\":90,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./README.md\",\"line\":94,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./README.md\",\"line\":102,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./README.md\",\"line\":104,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./README.md\",\"line\":108,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./README.md\",\"line\":110,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./README.md\",\"line\":111,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./README.md\",\"line\":112,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./README.md\",\"line\":116,\"rule\":\"MD013\",\"aliases\":[\"line-length\"],\"description\":\"Line length\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md013---line-length\"},{\"filename\":\"./README.md\",\"line\":4,\"rule\":\"MD022\",\"aliases\":[\"blanks-around-headers\"],\"description\":\"Headers should be surrounded by blank lines\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md022---headers-should-be-surrounded-by-blank-lines\"},{\"filename\":\"./README.md\",\"line\":20,\"rule\":\"MD022\",\"aliases\":[\"blanks-around-headers\"],\"description\":\"Headers should be surrounded by blank lines\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md022---headers-should-be-surrounded-by-blank-lines\"},{\"filename\":\"./README.md\",\"line\":24,\"rule\":\"MD022\",\"aliases\":[\"blanks-around-headers\"],\"description\":\"Headers should be surrounded by blank lines\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md022---headers-should-be-surrounded-by-blank-lines\"},{\"filename\":\"./README.md\",\"line\":57,\"rule\":\"MD022\",\"aliases\":[\"blanks-around-headers\"],\"description\":\"Headers should be surrounded by blank lines\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md022---headers-should-be-surrounded-by-blank-lines\"},{\"filename\":\"./README.md\",\"line\":24,\"rule\":\"MD025\",\"aliases\":[\"single-h1\"],\"description\":\"Multiple top level headers in the same document\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md025---multiple-top-level-headers-in-the-same-document\"},{\"filename\":\"./README.md\",\"line\":35,\"rule\":\"MD031\",\"aliases\":[\"blanks-around-fences\"],\"description\":\"Fenced code blocks should be surrounded by blank lines\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md031---fenced-code-blocks-should-be-surrounded-by-blank-lines\"},{\"filename\":\"./README.md\",\"line\":47,\"rule\":\"MD031\",\"aliases\":[\"blanks-around-fences\"],\"description\":\"Fenced code blocks should be surrounded by blank lines\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md031---fenced-code-blocks-should-be-surrounded-by-blank-lines\"},{\"filename\":\"./README.md\",\"line\":49,\"rule\":\"MD031\",\"aliases\":[\"blanks-around-fences\"],\"description\":\"Fenced code blocks should be surrounded by blank lines\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md031---fenced-code-blocks-should-be-surrounded-by-blank-lines\"},{\"filename\":\"./README.md\",\"line\":53,\"rule\":\"MD031\",\"aliases\":[\"blanks-around-fences\"],\"description\":\"Fenced code blocks should be surrounded by blank lines\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md031---fenced-code-blocks-should-be-surrounded-by-blank-lines\"},{\"filename\":\"./README.md\",\"line\":70,\"rule\":\"MD031\",\"aliases\":[\"blanks-around-fences\"],\"description\":\"Fenced code blocks should be surrounded by blank lines\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md031---fenced-code-blocks-should-be-surrounded-by-blank-lines\"},{\"filename\":\"./README.md\",\"line\":74,\"rule\":\"MD031\",\"aliases\":[\"blanks-around-fences\"],\"description\":\"Fenced code blocks should be surrounded by blank lines\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md031---fenced-code-blocks-should-be-surrounded-by-blank-lines\"},{\"filename\":\"./README.md\",\"line\":27,\"rule\":\"MD032\",\"aliases\":[\"blanks-around-lists\"],\"description\":\"Lists should be surrounded by blank lines\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md032---lists-should-be-surrounded-by-blank-lines\"},{\"filename\":\"./README.md\",\"line\":68,\"rule\":\"MD032\",\"aliases\":[\"blanks-around-lists\"],\"description\":\"Lists should be surrounded by blank lines\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md032---lists-should-be-surrounded-by-blank-lines\"},{\"filename\":\"./README.md\",\"line\":69,\"rule\":\"MD032\",\"aliases\":[\"blanks-around-lists\"],\"description\":\"Lists should be surrounded by blank lines\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md032---lists-should-be-surrounded-by-blank-lines\"},{\"filename\":\"./README.md\",\"line\":104,\"rule\":\"MD033\",\"aliases\":[\"no-inline-html\"],\"description\":\"Inline HTML\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md033---inline-html\"},{\"filename\":\"./README.md\",\"line\":30,\"rule\":\"MD034\",\"aliases\":[\"no-bare-urls\"],\"description\":\"Bare URL used\",\"docs\":\"https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md#md034---bare-url-used\"}]",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/meteo-gfs.git.assess.sqaaas/job/main/1/execution/node/61/log?consoleFull"
+                                },
+                                "level": "RECOMMENDED",
+                                "build_repo": "https://github.com/eosc-synergy/meteo-gfs.git.assess.sqaaas"
+                            },
+                            "standard": {
+                                "title": "A set of Common Software Quality Assurance Baseline Criteria for Research Projects",
+                                "version": "v4.0",
+                                "url": "https://github.com/indigo-dc/sqa-baseline/releases/tag/v4.0"
+                            },
+                            "data_unstructured": {
+                                "./CODE_OF_CONDUTC.md": {
+                                    "MD012": {
+                                        "description": "Multiple consecutive blank lines",
+                                        "line": [
+                                            119
+                                        ]
+                                    }
+                                },
+                                "./CONTRIBUTING.md": {
+                                    "MD012": {
+                                        "description": "Multiple consecutive blank lines",
+                                        "line": [
+                                            39
+                                        ]
+                                    },
+                                    "MD013": {
+                                        "description": "Line length",
+                                        "line": [
+                                            7,
+                                            12,
+                                            13,
+                                            14,
+                                            15,
+                                            16,
+                                            23,
+                                            28,
+                                            30,
+                                            34,
+                                            35,
+                                            36
+                                        ]
+                                    }
+                                },
+                                "./README.md": {
+                                    "MD009": {
+                                        "description": "Trailing spaces",
+                                        "line": [
+                                            32,
+                                            34,
+                                            36,
+                                            37,
+                                            55,
+                                            67,
+                                            81,
+                                            84,
+                                            88,
+                                            94
+                                        ]
+                                    },
+                                    "MD012": {
+                                        "description": "Multiple consecutive blank lines",
+                                        "line": [
+                                            3,
+                                            9,
+                                            10,
+                                            17,
+                                            18,
+                                            19,
+                                            23,
+                                            115
+                                        ]
+                                    },
+                                    "MD013": {
+                                        "description": "Line length",
+                                        "line": [
+                                            5,
+                                            62,
+                                            77,
+                                            82,
+                                            84,
+                                            88,
+                                            90,
+                                            94,
+                                            102,
+                                            104,
+                                            108,
+                                            110,
+                                            111,
+                                            112,
+                                            116
+                                        ]
+                                    },
+                                    "MD022": {
+                                        "description": "Headers should be surrounded by blank lines",
+                                        "line": [
+                                            4,
+                                            20,
+                                            24,
+                                            57
+                                        ]
+                                    },
+                                    "MD025": {
+                                        "description": "Multiple top level headers in the same document",
+                                        "line": [
+                                            24
+                                        ]
+                                    },
+                                    "MD031": {
+                                        "description": "Fenced code blocks should be surrounded by blank lines",
+                                        "line": [
+                                            35,
+                                            47,
+                                            49,
+                                            53,
+                                            70,
+                                            74
+                                        ]
+                                    },
+                                    "MD032": {
+                                        "description": "Lists should be surrounded by blank lines",
+                                        "line": [
+                                            27,
+                                            68,
+                                            69
+                                        ]
+                                    },
+                                    "MD033": {
+                                        "description": "Inline HTML",
+                                        "line": [
+                                            104
+                                        ]
+                                    },
+                                    "MD034": {
+                                        "description": "Bare URL used",
+                                        "line": [
+                                            30
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "valid": false,
+                    "required_for_next_level_badge": false
+                }
+            },
+            "coverage": {
+                "percentage": 60,
+                "total_subcriteria": 5,
+                "success_subcriteria": 3
+            }
+        },
+        "QC.Lic": {
+            "valid": false,
+            "subcriteria": {},
+            "coverage": {
+                "percentage": 0,
+                "total_subcriteria": 0,
+                "success_subcriteria": 0
+            }
+        },
+        "QC.Sec": {
+            "valid": true,
+            "subcriteria": {
+                "QC.Sec02": {
+                    "description": "Is the source code passing Static Analysis Security Testing (SAST)?",
+                    "requirement_level": "MUST",
+                    "hint": "Please check & solve the security weaknesses found by the SAST tool",
+                    "evidence": [
+                        {
+                            "valid": true,
+                            "message": "Source code files pass SAST checks performed by bandit tool",
+                            "plugin": {
+                                "name": "report2sqaaas-plugin-bandit",
+                                "version": "2.1.0"
+                            },
+                            "tool": {
+                                "name": "bandit",
+                                "lang": "Python",
+                                "version": "1.7.4",
+                                "docker": {
+                                    "dockerfile": "QC.Sec/bandit/Dockerfile",
+                                    "reviewed": "2022-03-04"
+                                },
+                                "ci": {
+                                    "name": "QC.Sec gitlab.geo3bcn.csic.es/dtgeo_geo3bcn/dtc-v2/meteo-gfs bandit",
+                                    "status": "SUCCESS",
+                                    "stdout_command": [
+                                        "bandit -f json --quiet  --confidence-level high --severity-level high --recursive  ."
+                                    ],
+                                    "stdout_text": "{\n  \"errors\": [],\n  \"generated_at\": \"2025-05-21T07:17:51Z\",\n  \"metrics\": {\n    \"./gfs_retrieve.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 60,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./grib_filter.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 81,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./meteo.py\": {\n      \"CONFIDENCE.HIGH\": 0,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 0,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 48,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"./nc_functions.py\": {\n      \"CONFIDENCE.HIGH\": 2,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 2,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 74,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    },\n    \"_totals\": {\n      \"CONFIDENCE.HIGH\": 2,\n      \"CONFIDENCE.LOW\": 0,\n      \"CONFIDENCE.MEDIUM\": 0,\n      \"CONFIDENCE.UNDEFINED\": 0,\n      \"SEVERITY.HIGH\": 0,\n      \"SEVERITY.LOW\": 2,\n      \"SEVERITY.MEDIUM\": 0,\n      \"SEVERITY.UNDEFINED\": 0,\n      \"loc\": 263,\n      \"nosec\": 0,\n      \"skipped_tests\": 0\n    }\n  },\n  \"results\": []\n}",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/meteo-gfs.git.assess.sqaaas/job/main/1/execution/node/79/log?consoleFull"
+                                },
+                                "level": "REQUIRED",
+                                "build_repo": "https://github.com/eosc-synergy/meteo-gfs.git.assess.sqaaas"
+                            },
+                            "standard": {
+                                "title": "A set of Common Software Quality Assurance Baseline Criteria for Research Projects",
+                                "version": "v4.0",
+                                "url": "https://github.com/indigo-dc/sqa-baseline/releases/tag/v4.0"
+                            },
+                            "data_unstructured": {
+                                "errors": [],
+                                "generated_at": "2025-05-21T07:17:51Z",
+                                "metrics": {
+                                    "./gfs_retrieve.py": {
+                                        "CONFIDENCE.HIGH": 0,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 60,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./grib_filter.py": {
+                                        "CONFIDENCE.HIGH": 0,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 81,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./meteo.py": {
+                                        "CONFIDENCE.HIGH": 0,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 0,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 48,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "./nc_functions.py": {
+                                        "CONFIDENCE.HIGH": 2,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 2,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 74,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    },
+                                    "_totals": {
+                                        "CONFIDENCE.HIGH": 2,
+                                        "CONFIDENCE.LOW": 0,
+                                        "CONFIDENCE.MEDIUM": 0,
+                                        "CONFIDENCE.UNDEFINED": 0,
+                                        "SEVERITY.HIGH": 0,
+                                        "SEVERITY.LOW": 2,
+                                        "SEVERITY.MEDIUM": 0,
+                                        "SEVERITY.UNDEFINED": 0,
+                                        "loc": 263,
+                                        "nosec": 0,
+                                        "skipped_tests": 0
+                                    }
+                                },
+                                "results": []
+                            }
+                        }
+                    ],
+                    "valid": true
+                }
+            },
+            "coverage": {
+                "percentage": 100,
+                "total_subcriteria": 1,
+                "success_subcriteria": 1
+            }
+        },
+        "QC.Sty": {
+            "valid": false,
+            "subcriteria": {
+                "QC.Sty01": {
+                    "description": "Is the software product following a style standard for Python files?",
+                    "requirement_level": "MUST",
+                    "hint": "Please check & solve the security weaknesses found by the linter tool",
+                    "evidence": [
+                        {
+                            "valid": false,
+                            "message": "Python files are not fully compliant with flake8 (pycodestyle, pyflakes, mccabe) standard",
+                            "plugin": {
+                                "name": "report2sqaaas-plugin-flake8",
+                                "version": "2.1.0"
+                            },
+                            "tool": {
+                                "name": "flake8",
+                                "lang": "Python",
+                                "version": "4.0.1 (mccabe: 0.6.1, pycodestyle: 2.8.0, pyflakes: 2.4.0)",
+                                "docker": {
+                                    "image": "pipelinecomponents/flake8:0.9.0",
+                                    "reviewed": "2022-03-04"
+                                },
+                                "ci": {
+                                    "name": "QC.Sty gitlab.geo3bcn.csic.es/dtgeo_geo3bcn/dtc-v2/meteo-gfs flake8",
+                                    "status": "FAILED",
+                                    "stdout_command": [
+                                        "flake8 ."
+                                    ],
+                                    "stdout_text": "./meteo.py:11:41: W291 trailing whitespace\n./meteo.py:13:15: E225 missing whitespace around operator\n./meteo.py:14:11: E225 missing whitespace around operator\n./meteo.py:16:1: E302 expected 2 blank lines, found 1\n./meteo.py:19:63: W291 trailing whitespace\n./meteo.py:20:80: E501 line too long (92 > 79 characters)\n./meteo.py:25:80: E501 line too long (138 > 79 characters)\n./meteo.py:26:6: W291 trailing whitespace\n./meteo.py:32:6: W291 trailing whitespace\n./meteo.py:37:80: E501 line too long (130 > 79 characters)\n./meteo.py:38:6: W291 trailing whitespace\n./meteo.py:41:10: E225 missing whitespace around operator\n./meteo.py:42:14: E225 missing whitespace around operator\n./meteo.py:45:1: W293 blank line contains whitespace\n./meteo.py:46:23: E225 missing whitespace around operator\n./meteo.py:46:48: E231 missing whitespace after ','\n./meteo.py:47:19: E225 missing whitespace around operator\n./meteo.py:47:44: E231 missing whitespace after ','\n./meteo.py:49:1: W293 blank line contains whitespace\n./meteo.py:50:14: E225 missing whitespace around operator\n./meteo.py:50:34: E231 missing whitespace after ','\n./meteo.py:50:39: E231 missing whitespace after ','\n./meteo.py:50:58: E231 missing whitespace after ','\n./meteo.py:50:69: W291 trailing whitespace\n./meteo.py:51:1: W293 blank line contains whitespace\n./meteo.py:52:12: E225 missing whitespace around operator\n./meteo.py:52:25: E225 missing whitespace around operator\n./meteo.py:53:6: E111 indentation is not a multiple of 4\n./meteo.py:53:29: W291 trailing whitespace\n./meteo.py:54:12: E225 missing whitespace around operator\n./meteo.py:54:25: E225 missing whitespace around operator\n./meteo.py:54:31: W291 trailing whitespace\n./meteo.py:55:6: E111 indentation is not a multiple of 4\n./meteo.py:56:1: E305 expected 2 blank lines after class or function definition, found 0\n./grib_filter.py:3:46: W291 trailing whitespace\n./grib_filter.py:7:1: E302 expected 2 blank lines, found 1\n./grib_filter.py:8:1: W293 blank line contains whitespace\n./grib_filter.py:10:5: E303 too many blank lines (2)\n./grib_filter.py:11:9: E265 block comment should start with '# '\n./grib_filter.py:12:18: E221 multiple spaces before operator\n./grib_filter.py:13:19: E221 multiple spaces before operator\n./grib_filter.py:14:18: E221 multiple spaces before operator\n./grib_filter.py:15:17: E221 multiple spaces before operator\n./grib_filter.py:16:17: E221 multiple spaces before operator\n./grib_filter.py:19:9: E265 block comment should start with '# '\n./grib_filter.py:23:9: E265 block comment should start with '# '\n./grib_filter.py:27:9: E265 block comment should start with '# '\n./grib_filter.py:28:17: E221 multiple spaces before operator\n./grib_filter.py:31:9: E303 too many blank lines (2)\n./grib_filter.py:31:9: E265 block comment should start with '# '\n./grib_filter.py:33:18: E225 missing whitespace around operator\n./grib_filter.py:34:9: E265 block comment should start with '# '\n./grib_filter.py:36:1: W293 blank line contains whitespace\n./grib_filter.py:37:9: E265 block comment should start with '# '\n./grib_filter.py:38:20: E225 missing whitespace around operator\n./grib_filter.py:39:1: W293 blank line contains whitespace\n./grib_filter.py:40:9: E265 block comment should start with '# '\n./grib_filter.py:41:20: E225 missing whitespace around operator\n./grib_filter.py:41:33: W291 trailing whitespace\n./grib_filter.py:44:1: W293 blank line contains whitespace\n./grib_filter.py:45:9: E265 block comment should start with '# '\n./grib_filter.py:46:24: E225 missing whitespace around operator\n./grib_filter.py:47:22: E225 missing whitespace around operator\n./grib_filter.py:48:5: E301 expected 1 blank line, found 0\n./grib_filter.py:49:1: W293 blank line contains whitespace\n./grib_filter.py:50:24: E701 multiple statements on one line (colon)\n./grib_filter.py:50:80: E501 line too long (125 > 79 characters)\n./grib_filter.py:50:119: E231 missing whitespace after ','\n./grib_filter.py:50:126: W291 trailing whitespace\n./grib_filter.py:51:33: E231 missing whitespace after ','\n./grib_filter.py:51:42: E231 missing whitespace after ','\n./grib_filter.py:52:13: E265 block comment should start with '# '\n./grib_filter.py:53:15: E221 multiple spaces before operator\n./grib_filter.py:55:28: E701 multiple statements on one line (colon)\n./grib_filter.py:55:80: E501 line too long (134 > 79 characters)\n./grib_filter.py:55:128: E231 missing whitespace after ','\n./grib_filter.py:55:135: W291 trailing whitespace\n./grib_filter.py:56:13: E265 block comment should start with '# '\n./grib_filter.py:56:80: E501 line too long (110 > 79 characters)\n./grib_filter.py:57:56: E231 missing whitespace after ','\n./grib_filter.py:57:80: E501 line too long (108 > 79 characters)\n./grib_filter.py:57:94: E251 unexpected spaces around keyword / parameter equals\n./grib_filter.py:57:96: E251 unexpected spaces around keyword / parameter equals\n./grib_filter.py:58:55: E128 continuation line under-indented for visual indent\n./grib_filter.py:58:57: E251 unexpected spaces around keyword / parameter equals\n./grib_filter.py:58:57: E221 multiple spaces before operator\n./grib_filter.py:58:65: E251 unexpected spaces around keyword / parameter equals\n./grib_filter.py:59:55: E124 closing bracket does not match visual indentation\n./grib_filter.py:60:1: W293 blank line contains whitespace\n./grib_filter.py:61:35: E231 missing whitespace after ','\n./grib_filter.py:62:1: W293 blank line contains whitespace\n./grib_filter.py:63:30: E225 missing whitespace around operator\n./grib_filter.py:64:45: E231 missing whitespace after ','\n./grib_filter.py:64:80: E501 line too long (143 > 79 characters)\n./grib_filter.py:64:137: E231 missing whitespace after ','\n./grib_filter.py:66:27: E225 missing whitespace around operator\n./grib_filter.py:67:80: E501 line too long (116 > 79 characters)\n./grib_filter.py:67:110: E231 missing whitespace after ','\n./grib_filter.py:67:117: W291 trailing whitespace\n./grib_filter.py:68:5: E301 expected 1 blank line, found 0\n./grib_filter.py:68:21: E231 missing whitespace after ','\n./grib_filter.py:69:20: E225 missing whitespace around operator\n./grib_filter.py:72:22: E225 missing whitespace around operator\n./grib_filter.py:75:22: E225 missing whitespace around operator\n./grib_filter.py:78:80: E501 line too long (95 > 79 characters)\n./grib_filter.py:78:87: E231 missing whitespace after ','\n./grib_filter.py:79:9: E265 block comment should start with '# '\n./grib_filter.py:80:80: E501 line too long (96 > 79 characters)\n./grib_filter.py:80:83: E251 unexpected spaces around keyword / parameter equals\n./grib_filter.py:80:85: E251 unexpected spaces around keyword / parameter equals\n./grib_filter.py:81:80: E501 line too long (89 > 79 characters)\n./grib_filter.py:81:81: E251 unexpected spaces around keyword / parameter equals\n./grib_filter.py:81:81: E221 multiple spaces before operator\n./grib_filter.py:81:85: E251 unexpected spaces around keyword / parameter equals\n./grib_filter.py:82:80: E501 line too long (89 > 79 characters)\n./grib_filter.py:82:81: E251 unexpected spaces around keyword / parameter equals\n./grib_filter.py:82:81: E221 multiple spaces before operator\n./grib_filter.py:82:85: E251 unexpected spaces around keyword / parameter equals\n./grib_filter.py:82:90: W291 trailing whitespace\n./grib_filter.py:83:80: E501 line too long (89 > 79 characters)\n./grib_filter.py:83:82: E251 unexpected spaces around keyword / parameter equals\n./grib_filter.py:83:82: E221 multiple spaces before operator\n./grib_filter.py:83:85: E251 unexpected spaces around keyword / parameter equals\n./grib_filter.py:83:88: E202 whitespace before ')'\n./grib_filter.py:84:9: E265 block comment should start with '# '\n./grib_filter.py:85:9: E265 block comment should start with '# '\n./grib_filter.py:87:9: E265 block comment should start with '# '\n./grib_filter.py:89:9: E265 block comment should start with '# '\n./grib_filter.py:90:80: E501 line too long (132 > 79 characters)\n./grib_filter.py:90:118: E251 unexpected spaces around keyword / parameter equals\n./grib_filter.py:90:120: E251 unexpected spaces around keyword / parameter equals\n./grib_filter.py:91:80: E501 line too long (132 > 79 characters)\n./grib_filter.py:91:118: E251 unexpected spaces around keyword / parameter equals\n./grib_filter.py:91:120: E251 unexpected spaces around keyword / parameter equals\n./grib_filter.py:92:80: E501 line too long (132 > 79 characters)\n./grib_filter.py:92:118: E251 unexpected spaces around keyword / parameter equals\n./grib_filter.py:92:120: E251 unexpected spaces around keyword / parameter equals\n./grib_filter.py:93:80: E501 line too long (133 > 79 characters)\n./grib_filter.py:93:118: E251 unexpected spaces around keyword / parameter equals\n./grib_filter.py:93:120: E251 unexpected spaces around keyword / parameter equals\n./grib_filter.py:93:132: E202 whitespace before ')'\n./grib_filter.py:94:9: E265 block comment should start with '# '\n./grib_filter.py:95:75: E251 unexpected spaces around keyword / parameter equals\n./grib_filter.py:95:75: E221 multiple spaces before operator\n./grib_filter.py:95:78: E251 unexpected spaces around keyword / parameter equals\n./grib_filter.py:95:80: E501 line too long (111 > 79 characters)\n./grib_filter.py:96:70: E128 continuation line under-indented for visual indent\n./grib_filter.py:96:75: E251 unexpected spaces around keyword / parameter equals\n./grib_filter.py:96:77: E251 unexpected spaces around keyword / parameter equals\n./grib_filter.py:96:80: E501 line too long (88 > 79 characters)\n./grib_filter.py:97:1: W293 blank line contains whitespace\n./grib_filter.py:100:27: E231 missing whitespace after ','\n./grib_filter.py:100:31: E231 missing whitespace after ','\n./grib_filter.py:102:56: E202 whitespace before ')'\n./grib_filter.py:105:66: W291 trailing whitespace\n./grib_filter.py:106:34: E261 at least two spaces before inline comment\n./grib_filter.py:109:24: E225 missing whitespace around operator\n./grib_filter.py:109:38: W291 trailing whitespace\n./grib_filter.py:110:1: W293 blank line contains whitespace\n./grib_filter.py:112:41: E231 missing whitespace after ','\n./grib_filter.py:112:74: E231 missing whitespace after ','\n./grib_filter.py:112:80: E501 line too long (80 > 79 characters)\n./grib_filter.py:112:81: W291 trailing whitespace\n./grib_filter.py:114:1: W293 blank line contains whitespace\n./grib_filter.py:115:1: W293 blank line contains whitespace\n./grib_filter.py:116:1: W293 blank line contains whitespace\n./grib_filter.py:118:1: E303 too many blank lines (4)\n./grib_filter.py:119:1: W293 blank line contains whitespace\n./grib_filter.py:121:5: E303 too many blank lines (2)\n./grib_filter.py:123:1: W293 blank line contains whitespace\n./grib_filter.py:124:1: W293 blank line contains whitespace\n./grib_filter.py:126:1: W293 blank line contains whitespace\n./grib_filter.py:126:1: E303 too many blank lines (3)\n./grib_filter.py:126:9: W292 no newline at end of file\n./gfs_retrieve.py:11:46: E261 at least two spaces before inline comment\n./gfs_retrieve.py:11:47: E262 inline comment should start with '# '\n./gfs_retrieve.py:11:80: E501 line too long (81 > 79 characters)\n./gfs_retrieve.py:18:15: E225 missing whitespace around operator\n./gfs_retrieve.py:19:33: E231 missing whitespace after ','\n./gfs_retrieve.py:19:49: E231 missing whitespace after ','\n./gfs_retrieve.py:21:49: E231 missing whitespace after ','\n./gfs_retrieve.py:21:80: E501 line too long (102 > 79 characters)\n./gfs_retrieve.py:21:87: E251 unexpected spaces around keyword / parameter equals\n./gfs_retrieve.py:21:89: E251 unexpected spaces around keyword / parameter equals\n./gfs_retrieve.py:22:55: E128 continuation line under-indented for visual indent\n./gfs_retrieve.py:22:57: E251 unexpected spaces around keyword / parameter equals\n./gfs_retrieve.py:22:57: E221 multiple spaces before operator\n./gfs_retrieve.py:22:65: E251 unexpected spaces around keyword / parameter equals\n./gfs_retrieve.py:24:23: E225 missing whitespace around operator\n./gfs_retrieve.py:26:1: E302 expected 2 blank lines, found 0\n./gfs_retrieve.py:27:19: E225 missing whitespace around operator\n./gfs_retrieve.py:28:19: E225 missing whitespace around operator\n./gfs_retrieve.py:29:20: E225 missing whitespace around operator\n./gfs_retrieve.py:31:20: E225 missing whitespace around operator\n./gfs_retrieve.py:32:9: E225 missing whitespace around operator\n./gfs_retrieve.py:34:13: E225 missing whitespace around operator\n./gfs_retrieve.py:35:24: E225 missing whitespace around operator\n./gfs_retrieve.py:36:17: E231 missing whitespace after ','\n./gfs_retrieve.py:38:1: E302 expected 2 blank lines, found 1\n./gfs_retrieve.py:38:25: E231 missing whitespace after ','\n./gfs_retrieve.py:38:33: E231 missing whitespace after ','\n./gfs_retrieve.py:39:12: E225 missing whitespace around operator\n./gfs_retrieve.py:40:22: E225 missing whitespace around operator\n./gfs_retrieve.py:40:46: E225 missing whitespace around operator\n./gfs_retrieve.py:41:7: E111 indentation is not a multiple of 4\n./gfs_retrieve.py:41:13: E225 missing whitespace around operator\n./gfs_retrieve.py:41:32: W291 trailing whitespace\n./gfs_retrieve.py:42:7: E111 indentation is not a multiple of 4\n./gfs_retrieve.py:43:11: E111 indentation is not a multiple of 4\n./gfs_retrieve.py:43:80: E501 line too long (150 > 79 characters)\n./gfs_retrieve.py:43:104: E225 missing whitespace around operator\n./gfs_retrieve.py:44:1: W293 blank line contains whitespace\n./gfs_retrieve.py:45:7: E111 indentation is not a multiple of 4\n./gfs_retrieve.py:46:10: E111 indentation is not a multiple of 4\n./gfs_retrieve.py:46:80: E501 line too long (132 > 79 characters)\n./gfs_retrieve.py:47:10: E111 indentation is not a multiple of 4\n./gfs_retrieve.py:47:17: E225 missing whitespace around operator\n./gfs_retrieve.py:49:9: E265 block comment should start with '# '\n./gfs_retrieve.py:49:80: E501 line too long (135 > 79 characters)\n./gfs_retrieve.py:49:136: W291 trailing whitespace\n./gfs_retrieve.py:50:26: E225 missing whitespace around operator\n./gfs_retrieve.py:50:50: E225 missing whitespace around operator\n./gfs_retrieve.py:51:30: E225 missing whitespace around operator\n./gfs_retrieve.py:52:80: E501 line too long (219 > 79 characters)\n./gfs_retrieve.py:53:24: E225 missing whitespace around operator\n./gfs_retrieve.py:55:16: E111 indentation is not a multiple of 4\n./gfs_retrieve.py:55:22: E231 missing whitespace after ','\n./gfs_retrieve.py:55:28: E225 missing whitespace around operator\n./gfs_retrieve.py:56:16: E111 indentation is not a multiple of 4\n./gfs_retrieve.py:56:23: E225 missing whitespace around operator\n./gfs_retrieve.py:56:25: W291 trailing whitespace\n./gfs_retrieve.py:57:16: E111 indentation is not a multiple of 4\n./gfs_retrieve.py:57:80: E501 line too long (221 > 79 characters)\n./gfs_retrieve.py:57:175: E225 missing whitespace around operator\n./gfs_retrieve.py:57:222: W291 trailing whitespace\n./gfs_retrieve.py:58:19: E231 missing whitespace after ','\n./gfs_retrieve.py:59:1: E302 expected 2 blank lines, found 0\n./gfs_retrieve.py:60:5: E265 block comment should start with '# '\n./gfs_retrieve.py:60:40: W291 trailing whitespace\n./gfs_retrieve.py:62:1: E302 expected 2 blank lines, found 0\n./gfs_retrieve.py:65:15: E225 missing whitespace around operator\n./gfs_retrieve.py:66:13: E231 missing whitespace after ','\n./gfs_retrieve.py:66:20: E225 missing whitespace around operator\n./gfs_retrieve.py:67:15: E225 missing whitespace around operator\n./gfs_retrieve.py:68:13: E117 over-indented\n./gfs_retrieve.py:70:22: E231 missing whitespace after ','\n./gfs_retrieve.py:70:30: E225 missing whitespace around operator\n./gfs_retrieve.py:70:73: W291 trailing whitespace\n./gfs_retrieve.py:71:24: E225 missing whitespace around operator\n./gfs_retrieve.py:71:39: E225 missing whitespace around operator\n./gfs_retrieve.py:72:80: E501 line too long (225 > 79 characters)\n./gfs_retrieve.py:73:1: W293 blank line contains whitespace\n./gfs_retrieve.py:74:1: W293 blank line contains whitespace\n./gfs_retrieve.py:74:9: W292 no newline at end of file\n./nc_functions.py:9:46: W291 trailing whitespace\n./nc_functions.py:10:10: W291 trailing whitespace\n./nc_functions.py:14:9: E225 missing whitespace around operator\n./nc_functions.py:15:7: E225 missing whitespace around operator\n./nc_functions.py:16:1: E402 module level import not at top of file\n./nc_functions.py:22:1: E305 expected 2 blank lines after class or function definition, found 1\n./nc_functions.py:25:1: E302 expected 2 blank lines, found 0\n./nc_functions.py:30:1: W293 blank line contains whitespace\n./nc_functions.py:32:45: E231 missing whitespace after ','\n./nc_functions.py:34:45: E231 missing whitespace after ','\n./nc_functions.py:36:20: E225 missing whitespace around operator\n./nc_functions.py:36:44: E231 missing whitespace after ','\n./nc_functions.py:38:80: E501 line too long (103 > 79 characters)\n./nc_functions.py:38:96: E231 missing whitespace after ','\n./nc_functions.py:38:102: E202 whitespace before ')'\n./nc_functions.py:41:5: F841 local variable 'nc_file_path' is assigned to but never used\n./nc_functions.py:41:17: E225 missing whitespace around operator\n./nc_functions.py:41:42: E231 missing whitespace after ','\n./nc_functions.py:42:18: E225 missing whitespace around operator\n./nc_functions.py:44:80: E501 line too long (167 > 79 characters)\n./nc_functions.py:45:33: E231 missing whitespace after ','\n./nc_functions.py:45:49: E231 missing whitespace after ','\n./nc_functions.py:46:43: E231 missing whitespace after ','\n./nc_functions.py:46:80: E501 line too long (96 > 79 characters)\n./nc_functions.py:46:81: E251 unexpected spaces around keyword / parameter equals\n./nc_functions.py:46:83: E251 unexpected spaces around keyword / parameter equals\n./nc_functions.py:47:55: E128 continuation line under-indented for visual indent\n./nc_functions.py:47:57: E251 unexpected spaces around keyword / parameter equals\n./nc_functions.py:47:57: E221 multiple spaces before operator\n./nc_functions.py:47:65: E251 unexpected spaces around keyword / parameter equals\n./nc_functions.py:48:54: E124 closing bracket does not match visual indentation\n./nc_functions.py:49:1: W293 blank line contains whitespace\n./nc_functions.py:51:26: E225 missing whitespace around operator\n./nc_functions.py:51:50: E231 missing whitespace after ','\n./nc_functions.py:51:80: E501 line too long (98 > 79 characters)\n./nc_functions.py:52:26: E225 missing whitespace around operator\n./nc_functions.py:52:55: E231 missing whitespace after ','\n./nc_functions.py:57:80: E501 line too long (91 > 79 characters)\n./nc_functions.py:64:1: W293 blank line contains whitespace\n./nc_functions.py:66:1: W293 blank line contains whitespace\n./nc_functions.py:69:1: W293 blank line contains whitespace\n./nc_functions.py:70:1: W293 blank line contains whitespace\n./nc_functions.py:71:1: W293 blank line contains whitespace\n./nc_functions.py:72:9: E303 too many blank lines (4)\n./nc_functions.py:73:68: E231 missing whitespace after ','\n./nc_functions.py:73:74: E202 whitespace before ')'\n./nc_functions.py:76:75: E203 whitespace before ','\n./nc_functions.py:76:80: E501 line too long (104 > 79 characters)\n./nc_functions.py:76:97: E231 missing whitespace after ','\n./nc_functions.py:76:103: E202 whitespace before ')'\n./nc_functions.py:77:55: E203 whitespace before ','\n./nc_functions.py:77:77: E231 missing whitespace after ','\n./nc_functions.py:77:80: E501 line too long (84 > 79 characters)\n./nc_functions.py:77:83: E202 whitespace before ')'\n./nc_functions.py:78:1: E302 expected 2 blank lines, found 0\n./nc_functions.py:80:37: E231 missing whitespace after ','\n./nc_functions.py:80:53: E231 missing whitespace after ','\n./nc_functions.py:81:53: E231 missing whitespace after ','\n./nc_functions.py:81:80: E501 line too long (106 > 79 characters)\n./nc_functions.py:81:91: E251 unexpected spaces around keyword / parameter equals\n./nc_functions.py:81:93: E251 unexpected spaces around keyword / parameter equals\n./nc_functions.py:82:55: E128 continuation line under-indented for visual indent\n./nc_functions.py:82:57: E251 unexpected spaces around keyword / parameter equals\n./nc_functions.py:82:57: E221 multiple spaces before operator\n./nc_functions.py:82:65: E251 unexpected spaces around keyword / parameter equals\n./nc_functions.py:83:55: E124 closing bracket does not match visual indentation\n./nc_functions.py:85:12: E271 multiple spaces after keyword\n./nc_functions.py:86:12: E111 indentation is not a multiple of 4\n./nc_functions.py:87:16: E111 indentation is not a multiple of 4\n./nc_functions.py:88:16: E111 indentation is not a multiple of 4\n./nc_functions.py:89:20: E111 indentation is not a multiple of 4\n./nc_functions.py:91:64: E231 missing whitespace after ','\n./nc_functions.py:91:70: E202 whitespace before ')'\n./nc_functions.py:92:1: W293 blank line contains whitespace\n./nc_functions.py:94:1: W293 blank line contains whitespace",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/meteo-gfs.git.assess.sqaaas/job/main/1/execution/node/88/log?consoleFull"
+                                },
+                                "level": "REQUIRED",
+                                "build_repo": "https://github.com/eosc-synergy/meteo-gfs.git.assess.sqaaas"
+                            },
+                            "standard": {
+                                "title": "A set of Common Software Quality Assurance Baseline Criteria for Research Projects",
+                                "version": "v4.0",
+                                "url": "https://github.com/indigo-dc/sqa-baseline/releases/tag/v4.0"
+                            },
+                            "data_unstructured": "./meteo.py:11:41: W291 trailing whitespace\n./meteo.py:13:15: E225 missing whitespace around operator\n./meteo.py:14:11: E225 missing whitespace around operator\n./meteo.py:16:1: E302 expected 2 blank lines, found 1\n./meteo.py:19:63: W291 trailing whitespace\n./meteo.py:20:80: E501 line too long (92 > 79 characters)\n./meteo.py:25:80: E501 line too long (138 > 79 characters)\n./meteo.py:26:6: W291 trailing whitespace\n./meteo.py:32:6: W291 trailing whitespace\n./meteo.py:37:80: E501 line too long (130 > 79 characters)\n./meteo.py:38:6: W291 trailing whitespace\n./meteo.py:41:10: E225 missing whitespace around operator\n./meteo.py:42:14: E225 missing whitespace around operator\n./meteo.py:45:1: W293 blank line contains whitespace\n./meteo.py:46:23: E225 missing whitespace around operator\n./meteo.py:46:48: E231 missing whitespace after ','\n./meteo.py:47:19: E225 missing whitespace around operator\n./meteo.py:47:44: E231 missing whitespace after ','\n./meteo.py:49:1: W293 blank line contains whitespace\n./meteo.py:50:14: E225 missing whitespace around operator\n./meteo.py:50:34: E231 missing whitespace after ','\n./meteo.py:50:39: E231 missing whitespace after ','\n./meteo.py:50:58: E231 missing whitespace after ','\n./meteo.py:50:69: W291 trailing whitespace\n./meteo.py:51:1: W293 blank line contains whitespace\n./meteo.py:52:12: E225 missing whitespace around operator\n./meteo.py:52:25: E225 missing whitespace around operator\n./meteo.py:53:6: E111 indentation is not a multiple of 4\n./meteo.py:53:29: W291 trailing whitespace\n./meteo.py:54:12: E225 missing whitespace around operator\n./meteo.py:54:25: E225 missing whitespace around operator\n./meteo.py:54:31: W291 trailing whitespace\n./meteo.py:55:6: E111 indentation is not a multiple of 4\n./meteo.py:56:1: E305 expected 2 blank lines after class or function definition, found 0\n./grib_filter.py:3:46: W291 trailing whitespace\n./grib_filter.py:7:1: E302 expected 2 blank lines, found 1\n./grib_filter.py:8:1: W293 blank line contains whitespace\n./grib_filter.py:10:5: E303 too many blank lines (2)\n./grib_filter.py:11:9: E265 block comment should start with '# '\n./grib_filter.py:12:18: E221 multiple spaces before operator\n./grib_filter.py:13:19: E221 multiple spaces before operator\n./grib_filter.py:14:18: E221 multiple spaces before operator\n./grib_filter.py:15:17: E221 multiple spaces before operator\n./grib_filter.py:16:17: E221 multiple spaces before operator\n./grib_filter.py:19:9: E265 block comment should start with '# '\n./grib_filter.py:23:9: E265 block comment should start with '# '\n./grib_filter.py:27:9: E265 block comment should start with '# '\n./grib_filter.py:28:17: E221 multiple spaces before operator\n./grib_filter.py:31:9: E303 too many blank lines (2)\n./grib_filter.py:31:9: E265 block comment should start with '# '\n./grib_filter.py:33:18: E225 missing whitespace around operator\n./grib_filter.py:34:9: E265 block comment should start with '# '\n./grib_filter.py:36:1: W293 blank line contains whitespace\n./grib_filter.py:37:9: E265 block comment should start with '# '\n./grib_filter.py:38:20: E225 missing whitespace around operator\n./grib_filter.py:39:1: W293 blank line contains whitespace\n./grib_filter.py:40:9: E265 block comment should start with '# '\n./grib_filter.py:41:20: E225 missing whitespace around operator\n./grib_filter.py:41:33: W291 trailing whitespace\n./grib_filter.py:44:1: W293 blank line contains whitespace\n./grib_filter.py:45:9: E265 block comment should start with '# '\n./grib_filter.py:46:24: E225 missing whitespace around operator\n./grib_filter.py:47:22: E225 missing whitespace around operator\n./grib_filter.py:48:5: E301 expected 1 blank line, found 0\n./grib_filter.py:49:1: W293 blank line contains whitespace\n./grib_filter.py:50:24: E701 multiple statements on one line (colon)\n./grib_filter.py:50:80: E501 line too long (125 > 79 characters)\n./grib_filter.py:50:119: E231 missing whitespace after ','\n./grib_filter.py:50:126: W291 trailing whitespace\n./grib_filter.py:51:33: E231 missing whitespace after ','\n./grib_filter.py:51:42: E231 missing whitespace after ','\n./grib_filter.py:52:13: E265 block comment should start with '# '\n./grib_filter.py:53:15: E221 multiple spaces before operator\n./grib_filter.py:55:28: E701 multiple statements on one line (colon)\n./grib_filter.py:55:80: E501 line too long (134 > 79 characters)\n./grib_filter.py:55:128: E231 missing whitespace after ','\n./grib_filter.py:55:135: W291 trailing whitespace\n./grib_filter.py:56:13: E265 block comment should start with '# '\n./grib_filter.py:56:80: E501 line too long (110 > 79 characters)\n./grib_filter.py:57:56: E231 missing whitespace after ','\n./grib_filter.py:57:80: E501 line too long (108 > 79 characters)\n./grib_filter.py:57:94: E251 unexpected spaces around keyword / parameter equals\n./grib_filter.py:57:96: E251 unexpected spaces around keyword / parameter equals\n./grib_filter.py:58:55: E128 continuation line under-indented for visual indent\n./grib_filter.py:58:57: E251 unexpected spaces around keyword / parameter equals\n./grib_filter.py:58:57: E221 multiple spaces before operator\n./grib_filter.py:58:65: E251 unexpected spaces around keyword / parameter equals\n./grib_filter.py:59:55: E124 closing bracket does not match visual indentation\n./grib_filter.py:60:1: W293 blank line contains whitespace\n./grib_filter.py:61:35: E231 missing whitespace after ','\n./grib_filter.py:62:1: W293 blank line contains whitespace\n./grib_filter.py:63:30: E225 missing whitespace around operator\n./grib_filter.py:64:45: E231 missing whitespace after ','\n./grib_filter.py:64:80: E501 line too long (143 > 79 characters)\n./grib_filter.py:64:137: E231 missing whitespace after ','\n./grib_filter.py:66:27: E225 missing whitespace around operator\n./grib_filter.py:67:80: E501 line too long (116 > 79 characters)\n./grib_filter.py:67:110: E231 missing whitespace after ','\n./grib_filter.py:67:117: W291 trailing whitespace\n./grib_filter.py:68:5: E301 expected 1 blank line, found 0\n./grib_filter.py:68:21: E231 missing whitespace after ','\n./grib_filter.py:69:20: E225 missing whitespace around operator\n./grib_filter.py:72:22: E225 missing whitespace around operator\n./grib_filter.py:75:22: E225 missing whitespace around operator\n./grib_filter.py:78:80: E501 line too long (95 > 79 characters)\n./grib_filter.py:78:87: E231 missing whitespace after ','\n./grib_filter.py:79:9: E265 block comment should start with '# '\n./grib_filter.py:80:80: E501 line too long (96 > 79 characters)\n./grib_filter.py:80:83: E251 unexpected spaces around keyword / parameter equals\n./grib_filter.py:80:85: E251 unexpected spaces around keyword / parameter equals\n./grib_filter.py:81:80: E501 line too long (89 > 79 characters)\n./grib_filter.py:81:81: E251 unexpected spaces around keyword / parameter equals\n./grib_filter.py:81:81: E221 multiple spaces before operator\n./grib_filter.py:81:85: E251 unexpected spaces around keyword / parameter equals\n./grib_filter.py:82:80: E501 line too long (89 > 79 characters)\n./grib_filter.py:82:81: E251 unexpected spaces around keyword / parameter equals\n./grib_filter.py:82:81: E221 multiple spaces before operator\n./grib_filter.py:82:85: E251 unexpected spaces around keyword / parameter equals\n./grib_filter.py:82:90: W291 trailing whitespace\n./grib_filter.py:83:80: E501 line too long (89 > 79 characters)\n./grib_filter.py:83:82: E251 unexpected spaces around keyword / parameter equals\n./grib_filter.py:83:82: E221 multiple spaces before operator\n./grib_filter.py:83:85: E251 unexpected spaces around keyword / parameter equals\n./grib_filter.py:83:88: E202 whitespace before ')'\n./grib_filter.py:84:9: E265 block comment should start with '# '\n./grib_filter.py:85:9: E265 block comment should start with '# '\n./grib_filter.py:87:9: E265 block comment should start with '# '\n./grib_filter.py:89:9: E265 block comment should start with '# '\n./grib_filter.py:90:80: E501 line too long (132 > 79 characters)\n./grib_filter.py:90:118: E251 unexpected spaces around keyword / parameter equals\n./grib_filter.py:90:120: E251 unexpected spaces around keyword / parameter equals\n./grib_filter.py:91:80: E501 line too long (132 > 79 characters)\n./grib_filter.py:91:118: E251 unexpected spaces around keyword / parameter equals\n./grib_filter.py:91:120: E251 unexpected spaces around keyword / parameter equals\n./grib_filter.py:92:80: E501 line too long (132 > 79 characters)\n./grib_filter.py:92:118: E251 unexpected spaces around keyword / parameter equals\n./grib_filter.py:92:120: E251 unexpected spaces around keyword / parameter equals\n./grib_filter.py:93:80: E501 line too long (133 > 79 characters)\n./grib_filter.py:93:118: E251 unexpected spaces around keyword / parameter equals\n./grib_filter.py:93:120: E251 unexpected spaces around keyword / parameter equals\n./grib_filter.py:93:132: E202 whitespace before ')'\n./grib_filter.py:94:9: E265 block comment should start with '# '\n./grib_filter.py:95:75: E251 unexpected spaces around keyword / parameter equals\n./grib_filter.py:95:75: E221 multiple spaces before operator\n./grib_filter.py:95:78: E251 unexpected spaces around keyword / parameter equals\n./grib_filter.py:95:80: E501 line too long (111 > 79 characters)\n./grib_filter.py:96:70: E128 continuation line under-indented for visual indent\n./grib_filter.py:96:75: E251 unexpected spaces around keyword / parameter equals\n./grib_filter.py:96:77: E251 unexpected spaces around keyword / parameter equals\n./grib_filter.py:96:80: E501 line too long (88 > 79 characters)\n./grib_filter.py:97:1: W293 blank line contains whitespace\n./grib_filter.py:100:27: E231 missing whitespace after ','\n./grib_filter.py:100:31: E231 missing whitespace after ','\n./grib_filter.py:102:56: E202 whitespace before ')'\n./grib_filter.py:105:66: W291 trailing whitespace\n./grib_filter.py:106:34: E261 at least two spaces before inline comment\n./grib_filter.py:109:24: E225 missing whitespace around operator\n./grib_filter.py:109:38: W291 trailing whitespace\n./grib_filter.py:110:1: W293 blank line contains whitespace\n./grib_filter.py:112:41: E231 missing whitespace after ','\n./grib_filter.py:112:74: E231 missing whitespace after ','\n./grib_filter.py:112:80: E501 line too long (80 > 79 characters)\n./grib_filter.py:112:81: W291 trailing whitespace\n./grib_filter.py:114:1: W293 blank line contains whitespace\n./grib_filter.py:115:1: W293 blank line contains whitespace\n./grib_filter.py:116:1: W293 blank line contains whitespace\n./grib_filter.py:118:1: E303 too many blank lines (4)\n./grib_filter.py:119:1: W293 blank line contains whitespace\n./grib_filter.py:121:5: E303 too many blank lines (2)\n./grib_filter.py:123:1: W293 blank line contains whitespace\n./grib_filter.py:124:1: W293 blank line contains whitespace\n./grib_filter.py:126:1: W293 blank line contains whitespace\n./grib_filter.py:126:1: E303 too many blank lines (3)\n./grib_filter.py:126:9: W292 no newline at end of file\n./gfs_retrieve.py:11:46: E261 at least two spaces before inline comment\n./gfs_retrieve.py:11:47: E262 inline comment should start with '# '\n./gfs_retrieve.py:11:80: E501 line too long (81 > 79 characters)\n./gfs_retrieve.py:18:15: E225 missing whitespace around operator\n./gfs_retrieve.py:19:33: E231 missing whitespace after ','\n./gfs_retrieve.py:19:49: E231 missing whitespace after ','\n./gfs_retrieve.py:21:49: E231 missing whitespace after ','\n./gfs_retrieve.py:21:80: E501 line too long (102 > 79 characters)\n./gfs_retrieve.py:21:87: E251 unexpected spaces around keyword / parameter equals\n./gfs_retrieve.py:21:89: E251 unexpected spaces around keyword / parameter equals\n./gfs_retrieve.py:22:55: E128 continuation line under-indented for visual indent\n./gfs_retrieve.py:22:57: E251 unexpected spaces around keyword / parameter equals\n./gfs_retrieve.py:22:57: E221 multiple spaces before operator\n./gfs_retrieve.py:22:65: E251 unexpected spaces around keyword / parameter equals\n./gfs_retrieve.py:24:23: E225 missing whitespace around operator\n./gfs_retrieve.py:26:1: E302 expected 2 blank lines, found 0\n./gfs_retrieve.py:27:19: E225 missing whitespace around operator\n./gfs_retrieve.py:28:19: E225 missing whitespace around operator\n./gfs_retrieve.py:29:20: E225 missing whitespace around operator\n./gfs_retrieve.py:31:20: E225 missing whitespace around operator\n./gfs_retrieve.py:32:9: E225 missing whitespace around operator\n./gfs_retrieve.py:34:13: E225 missing whitespace around operator\n./gfs_retrieve.py:35:24: E225 missing whitespace around operator\n./gfs_retrieve.py:36:17: E231 missing whitespace after ','\n./gfs_retrieve.py:38:1: E302 expected 2 blank lines, found 1\n./gfs_retrieve.py:38:25: E231 missing whitespace after ','\n./gfs_retrieve.py:38:33: E231 missing whitespace after ','\n./gfs_retrieve.py:39:12: E225 missing whitespace around operator\n./gfs_retrieve.py:40:22: E225 missing whitespace around operator\n./gfs_retrieve.py:40:46: E225 missing whitespace around operator\n./gfs_retrieve.py:41:7: E111 indentation is not a multiple of 4\n./gfs_retrieve.py:41:13: E225 missing whitespace around operator\n./gfs_retrieve.py:41:32: W291 trailing whitespace\n./gfs_retrieve.py:42:7: E111 indentation is not a multiple of 4\n./gfs_retrieve.py:43:11: E111 indentation is not a multiple of 4\n./gfs_retrieve.py:43:80: E501 line too long (150 > 79 characters)\n./gfs_retrieve.py:43:104: E225 missing whitespace around operator\n./gfs_retrieve.py:44:1: W293 blank line contains whitespace\n./gfs_retrieve.py:45:7: E111 indentation is not a multiple of 4\n./gfs_retrieve.py:46:10: E111 indentation is not a multiple of 4\n./gfs_retrieve.py:46:80: E501 line too long (132 > 79 characters)\n./gfs_retrieve.py:47:10: E111 indentation is not a multiple of 4\n./gfs_retrieve.py:47:17: E225 missing whitespace around operator\n./gfs_retrieve.py:49:9: E265 block comment should start with '# '\n./gfs_retrieve.py:49:80: E501 line too long (135 > 79 characters)\n./gfs_retrieve.py:49:136: W291 trailing whitespace\n./gfs_retrieve.py:50:26: E225 missing whitespace around operator\n./gfs_retrieve.py:50:50: E225 missing whitespace around operator\n./gfs_retrieve.py:51:30: E225 missing whitespace around operator\n./gfs_retrieve.py:52:80: E501 line too long (219 > 79 characters)\n./gfs_retrieve.py:53:24: E225 missing whitespace around operator\n./gfs_retrieve.py:55:16: E111 indentation is not a multiple of 4\n./gfs_retrieve.py:55:22: E231 missing whitespace after ','\n./gfs_retrieve.py:55:28: E225 missing whitespace around operator\n./gfs_retrieve.py:56:16: E111 indentation is not a multiple of 4\n./gfs_retrieve.py:56:23: E225 missing whitespace around operator\n./gfs_retrieve.py:56:25: W291 trailing whitespace\n./gfs_retrieve.py:57:16: E111 indentation is not a multiple of 4\n./gfs_retrieve.py:57:80: E501 line too long (221 > 79 characters)\n./gfs_retrieve.py:57:175: E225 missing whitespace around operator\n./gfs_retrieve.py:57:222: W291 trailing whitespace\n./gfs_retrieve.py:58:19: E231 missing whitespace after ','\n./gfs_retrieve.py:59:1: E302 expected 2 blank lines, found 0\n./gfs_retrieve.py:60:5: E265 block comment should start with '# '\n./gfs_retrieve.py:60:40: W291 trailing whitespace\n./gfs_retrieve.py:62:1: E302 expected 2 blank lines, found 0\n./gfs_retrieve.py:65:15: E225 missing whitespace around operator\n./gfs_retrieve.py:66:13: E231 missing whitespace after ','\n./gfs_retrieve.py:66:20: E225 missing whitespace around operator\n./gfs_retrieve.py:67:15: E225 missing whitespace around operator\n./gfs_retrieve.py:68:13: E117 over-indented\n./gfs_retrieve.py:70:22: E231 missing whitespace after ','\n./gfs_retrieve.py:70:30: E225 missing whitespace around operator\n./gfs_retrieve.py:70:73: W291 trailing whitespace\n./gfs_retrieve.py:71:24: E225 missing whitespace around operator\n./gfs_retrieve.py:71:39: E225 missing whitespace around operator\n./gfs_retrieve.py:72:80: E501 line too long (225 > 79 characters)\n./gfs_retrieve.py:73:1: W293 blank line contains whitespace\n./gfs_retrieve.py:74:1: W293 blank line contains whitespace\n./gfs_retrieve.py:74:9: W292 no newline at end of file\n./nc_functions.py:9:46: W291 trailing whitespace\n./nc_functions.py:10:10: W291 trailing whitespace\n./nc_functions.py:14:9: E225 missing whitespace around operator\n./nc_functions.py:15:7: E225 missing whitespace around operator\n./nc_functions.py:16:1: E402 module level import not at top of file\n./nc_functions.py:22:1: E305 expected 2 blank lines after class or function definition, found 1\n./nc_functions.py:25:1: E302 expected 2 blank lines, found 0\n./nc_functions.py:30:1: W293 blank line contains whitespace\n./nc_functions.py:32:45: E231 missing whitespace after ','\n./nc_functions.py:34:45: E231 missing whitespace after ','\n./nc_functions.py:36:20: E225 missing whitespace around operator\n./nc_functions.py:36:44: E231 missing whitespace after ','\n./nc_functions.py:38:80: E501 line too long (103 > 79 characters)\n./nc_functions.py:38:96: E231 missing whitespace after ','\n./nc_functions.py:38:102: E202 whitespace before ')'\n./nc_functions.py:41:5: F841 local variable 'nc_file_path' is assigned to but never used\n./nc_functions.py:41:17: E225 missing whitespace around operator\n./nc_functions.py:41:42: E231 missing whitespace after ','\n./nc_functions.py:42:18: E225 missing whitespace around operator\n./nc_functions.py:44:80: E501 line too long (167 > 79 characters)\n./nc_functions.py:45:33: E231 missing whitespace after ','\n./nc_functions.py:45:49: E231 missing whitespace after ','\n./nc_functions.py:46:43: E231 missing whitespace after ','\n./nc_functions.py:46:80: E501 line too long (96 > 79 characters)\n./nc_functions.py:46:81: E251 unexpected spaces around keyword / parameter equals\n./nc_functions.py:46:83: E251 unexpected spaces around keyword / parameter equals\n./nc_functions.py:47:55: E128 continuation line under-indented for visual indent\n./nc_functions.py:47:57: E251 unexpected spaces around keyword / parameter equals\n./nc_functions.py:47:57: E221 multiple spaces before operator\n./nc_functions.py:47:65: E251 unexpected spaces around keyword / parameter equals\n./nc_functions.py:48:54: E124 closing bracket does not match visual indentation\n./nc_functions.py:49:1: W293 blank line contains whitespace\n./nc_functions.py:51:26: E225 missing whitespace around operator\n./nc_functions.py:51:50: E231 missing whitespace after ','\n./nc_functions.py:51:80: E501 line too long (98 > 79 characters)\n./nc_functions.py:52:26: E225 missing whitespace around operator\n./nc_functions.py:52:55: E231 missing whitespace after ','\n./nc_functions.py:57:80: E501 line too long (91 > 79 characters)\n./nc_functions.py:64:1: W293 blank line contains whitespace\n./nc_functions.py:66:1: W293 blank line contains whitespace\n./nc_functions.py:69:1: W293 blank line contains whitespace\n./nc_functions.py:70:1: W293 blank line contains whitespace\n./nc_functions.py:71:1: W293 blank line contains whitespace\n./nc_functions.py:72:9: E303 too many blank lines (4)\n./nc_functions.py:73:68: E231 missing whitespace after ','\n./nc_functions.py:73:74: E202 whitespace before ')'\n./nc_functions.py:76:75: E203 whitespace before ','\n./nc_functions.py:76:80: E501 line too long (104 > 79 characters)\n./nc_functions.py:76:97: E231 missing whitespace after ','\n./nc_functions.py:76:103: E202 whitespace before ')'\n./nc_functions.py:77:55: E203 whitespace before ','\n./nc_functions.py:77:77: E231 missing whitespace after ','\n./nc_functions.py:77:80: E501 line too long (84 > 79 characters)\n./nc_functions.py:77:83: E202 whitespace before ')'\n./nc_functions.py:78:1: E302 expected 2 blank lines, found 0\n./nc_functions.py:80:37: E231 missing whitespace after ','\n./nc_functions.py:80:53: E231 missing whitespace after ','\n./nc_functions.py:81:53: E231 missing whitespace after ','\n./nc_functions.py:81:80: E501 line too long (106 > 79 characters)\n./nc_functions.py:81:91: E251 unexpected spaces around keyword / parameter equals\n./nc_functions.py:81:93: E251 unexpected spaces around keyword / parameter equals\n./nc_functions.py:82:55: E128 continuation line under-indented for visual indent\n./nc_functions.py:82:57: E251 unexpected spaces around keyword / parameter equals\n./nc_functions.py:82:57: E221 multiple spaces before operator\n./nc_functions.py:82:65: E251 unexpected spaces around keyword / parameter equals\n./nc_functions.py:83:55: E124 closing bracket does not match visual indentation\n./nc_functions.py:85:12: E271 multiple spaces after keyword\n./nc_functions.py:86:12: E111 indentation is not a multiple of 4\n./nc_functions.py:87:16: E111 indentation is not a multiple of 4\n./nc_functions.py:88:16: E111 indentation is not a multiple of 4\n./nc_functions.py:89:20: E111 indentation is not a multiple of 4\n./nc_functions.py:91:64: E231 missing whitespace after ','\n./nc_functions.py:91:70: E202 whitespace before ')'\n./nc_functions.py:92:1: W293 blank line contains whitespace\n./nc_functions.py:94:1: W293 blank line contains whitespace"
+                        },
+                        {
+                            "valid": true,
+                            "message": "JSON files are compliant with jsonlint standard",
+                            "plugin": {
+                                "name": "report2sqaaas-plugin-jenkins_exit_status",
+                                "version": "2.1.0"
+                            },
+                            "tool": {
+                                "name": "jsonlint",
+                                "lang": "JSON",
+                                "version": "1.6.3",
+                                "docker": {
+                                    "dockerfile": "QC.Sty/jsonlint/Dockerfile",
+                                    "reviewed": "2021-11-23"
+                                },
+                                "ci": {
+                                    "name": "QC.Sty gitlab.geo3bcn.csic.es/dtgeo_geo3bcn/dtc-v2/meteo-gfs jsonlint",
+                                    "status": "SUCCESS",
+                                    "stdout_command": [
+                                        "jsonlint-cli \"**/*.json\""
+                                    ],
+                                    "stdout_text": "",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/meteo-gfs.git.assess.sqaaas/job/main/1/execution/node/97/log?consoleFull"
+                                },
+                                "level": "REQUIRED",
+                                "build_repo": "https://github.com/eosc-synergy/meteo-gfs.git.assess.sqaaas"
+                            },
+                            "standard": {
+                                "title": "A set of Common Software Quality Assurance Baseline Criteria for Research Projects",
+                                "version": "v4.0",
+                                "url": "https://github.com/indigo-dc/sqa-baseline/releases/tag/v4.0"
+                            },
+                            "data_unstructured": {}
+                        }
+                    ],
+                    "valid": false,
+                    "required_for_next_level_badge": false
+                }
+            },
+            "coverage": {
+                "percentage": 0,
+                "total_subcriteria": 1,
+                "success_subcriteria": 0
+            }
+        },
+        "QC.Uni": {
+            "valid": false,
+            "subcriteria": {
+                "QC.Uni01": {
+                    "description": "Are the tests passing through an automated means?",
+                    "requirement_level": "MUST",
+                    "hint": "Please check & solve the failing test cases found by the {tool_name} tool",
+                    "evidence": [
+                        {
+                            "valid": false,
+                            "message": "Test cases are not passing using None testing framework",
+                            "plugin": {
+                                "name": "report2sqaaas-plugin-jenkins_exit_status",
+                                "version": "2.1.0"
+                            },
+                            "tool": {
+                                "name": "pytest",
+                                "lang": "Python",
+                                "version": "7.1.3",
+                                "docker": {
+                                    "image": "eoscsynergy/sqaaas-pytest:7.1.3-alpha",
+                                    "reviewed": "2023-08-09"
+                                },
+                                "ci": {
+                                    "name": "QC.Uni gitlab.geo3bcn.csic.es/dtgeo_geo3bcn/dtc-v2/meteo-gfs pytest",
+                                    "status": "FAILED",
+                                    "stdout_command": [
+                                        "pytest  --json-report  --json-report-indent 4"
+                                    ],
+                                    "stdout_text": "============================= test session starts ==============================\nplatform linux -- Python 3.9.17, pytest-7.1.3, pluggy-1.2.0\nrootdir: /sqaaas-build/gitlab.geo3bcn.csic.es/dtgeo_geo3bcn/dtc-v2/meteo-gfs\nplugins: metadata-3.0.0, json-report-1.5.0\ncollected 0 items\n\n--------------------------------- JSON report ----------------------------------\nreport saved to: .report.json\n============================ no tests ran in 0.01s =============================",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/meteo-gfs.git.assess.sqaaas/job/main/1/execution/node/106/log?consoleFull"
+                                },
+                                "level": "REQUIRED",
+                                "build_repo": "https://github.com/eosc-synergy/meteo-gfs.git.assess.sqaaas"
+                            },
+                            "standard": {
+                                "title": "A set of Common Software Quality Assurance Baseline Criteria for Research Projects",
+                                "version": "v4.0",
+                                "url": "https://github.com/indigo-dc/sqa-baseline/releases/tag/v4.0"
+                            },
+                            "data_unstructured": {}
+                        }
+                    ],
+                    "valid": false,
+                    "required_for_next_level_badge": false
+                }
+            },
+            "coverage": {
+                "percentage": 0,
+                "total_subcriteria": 1,
+                "success_subcriteria": 0
+            }
+        },
+        "QC.Ver": {
+            "valid": true,
+            "subcriteria": {
+                "QC.Ver01.0": {
+                    "description": "Are tags being used for releasing software",
+                    "requirement_level": "MUST",
+                    "hint": "Git tags are a convenient way to release software. This subcriterion checks if any git tag is present in the code history. More info on it-scm.com/book/en/v2/Git-Basics-Tagging\" target=\"_blank\">git tagging</a>",
+                    "evidence": [
+                        {
+                            "valid": true,
+                            "message": "The code repository uses tags for releasing new software versions",
+                            "plugin": {
+                                "name": "report2sqaaas-plugin-is_semver",
+                                "version": "2.1.0"
+                            },
+                            "tool": {
+                                "name": "get_git_tags.py",
+                                "lang": "Semantic Versioning",
+                                "version": "latest",
+                                "docker": {
+                                    "dockerfile": "QC.Ver/Dockerfile",
+                                    "reviewed": "2022-05-10"
+                                },
+                                "ci": {
+                                    "name": "QC.Ver gitlab.geo3bcn.csic.es/dtgeo_geo3bcn/dtc-v2/meteo-gfs get_git_tags.py",
+                                    "status": "SUCCESS",
+                                    "stdout_command": [
+                                        "get_git_tags.py"
+                                    ],
+                                    "stdout_text": "['v_1.1', 'v_1.0.0']",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/meteo-gfs.git.assess.sqaaas/job/main/1/execution/node/115/log?consoleFull"
+                                },
+                                "level": "REQUIRED",
+                                "build_repo": "https://github.com/eosc-synergy/meteo-gfs.git.assess.sqaaas"
+                            },
+                            "standard": {
+                                "title": "A set of Common Software Quality Assurance Baseline Criteria for Research Projects",
+                                "version": "v4.0",
+                                "url": "https://github.com/indigo-dc/sqa-baseline/releases/tag/v4.0"
+                            },
+                            "data_unstructured": [
+                                "v_1.1",
+                                "v_1.0.0"
+                            ]
+                        }
+                    ],
+                    "valid": true
+                },
+                "QC.Ver01": {
+                    "description": "Is the latest release compliant with Semantic Versioning (SemVer) specification?",
+                    "requirement_level": "SHOULD",
+                    "hint": "Latest tag must be compliant with <a href=\"https://semver.org\" target=\"_blank\">SemVer specification</a>",
+                    "evidence": [
+                        {
+                            "valid": false,
+                            "message": "Latest release tag v_1.1 found, but is not SemVer compliant",
+                            "plugin": {
+                                "name": "report2sqaaas-plugin-is_semver",
+                                "version": "2.1.0"
+                            },
+                            "tool": {
+                                "name": "get_git_tags.py",
+                                "lang": "Semantic Versioning",
+                                "version": "latest",
+                                "docker": {
+                                    "dockerfile": "QC.Ver/Dockerfile",
+                                    "reviewed": "2022-05-10"
+                                },
+                                "ci": {
+                                    "name": "QC.Ver gitlab.geo3bcn.csic.es/dtgeo_geo3bcn/dtc-v2/meteo-gfs get_git_tags.py",
+                                    "status": "SUCCESS",
+                                    "stdout_command": [
+                                        "get_git_tags.py"
+                                    ],
+                                    "stdout_text": "['v_1.1', 'v_1.0.0']",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/meteo-gfs.git.assess.sqaaas/job/main/1/execution/node/115/log?consoleFull"
+                                },
+                                "level": "REQUIRED",
+                                "build_repo": "https://github.com/eosc-synergy/meteo-gfs.git.assess.sqaaas"
+                            },
+                            "standard": {
+                                "title": "A set of Common Software Quality Assurance Baseline Criteria for Research Projects",
+                                "version": "v4.0",
+                                "url": "https://github.com/indigo-dc/sqa-baseline/releases/tag/v4.0"
+                            },
+                            "data_unstructured": [
+                                "v_1.1",
+                                "v_1.0.0"
+                            ]
+                        }
+                    ],
+                    "valid": false,
+                    "required_for_next_level_badge": false
+                },
+                "QC.Ver02": {
+                    "description": "Are all release tags with Semantic Versioning (SemVer) specification?",
+                    "requirement_level": "SHOULD",
+                    "hint": "Existent release tags shall be <a href=\"https://semver.org\" target=\"_blank\">SemVer</a> compliant for this subcriterion to be successful",
+                    "evidence": [
+                        {
+                            "valid": false,
+                            "message": "Not all release tags are SemVer compliant",
+                            "plugin": {
+                                "name": "report2sqaaas-plugin-is_semver",
+                                "version": "2.1.0"
+                            },
+                            "tool": {
+                                "name": "get_git_tags.py",
+                                "lang": "Semantic Versioning",
+                                "version": "latest",
+                                "docker": {
+                                    "dockerfile": "QC.Ver/Dockerfile",
+                                    "reviewed": "2022-05-10"
+                                },
+                                "ci": {
+                                    "name": "QC.Ver gitlab.geo3bcn.csic.es/dtgeo_geo3bcn/dtc-v2/meteo-gfs get_git_tags.py",
+                                    "status": "SUCCESS",
+                                    "stdout_command": [
+                                        "get_git_tags.py"
+                                    ],
+                                    "stdout_text": "['v_1.1', 'v_1.0.0']",
+                                    "url": "https://jenkins.eosc-synergy.eu/job/eosc-synergy-org/job/meteo-gfs.git.assess.sqaaas/job/main/1/execution/node/115/log?consoleFull"
+                                },
+                                "level": "REQUIRED",
+                                "build_repo": "https://github.com/eosc-synergy/meteo-gfs.git.assess.sqaaas"
+                            },
+                            "standard": {
+                                "title": "A set of Common Software Quality Assurance Baseline Criteria for Research Projects",
+                                "version": "v4.0",
+                                "url": "https://github.com/indigo-dc/sqa-baseline/releases/tag/v4.0"
+                            },
+                            "data_unstructured": [
+                                "v_1.1",
+                                "v_1.0.0"
+                            ]
+                        }
+                    ],
+                    "valid": false,
+                    "required_for_next_level_badge": false
+                }
+            },
+            "coverage": {
+                "percentage": 33,
+                "total_subcriteria": 3,
+                "success_subcriteria": 1
+            }
+        },
+        "QC.Met": {
+            "valid": false,
+            "subcriteria": {
+                "QC.Met01": {
+                    "description": "Is the software citable?",
+                    "valid": false,
+                    "hint": "The two formats for software citation supported by SQAaaS are: 1) <a href=\"https://codemeta.github.io/\" target=\"_blank\">CodeMeta</a> and 2) <a href=\"https://citation-file-format.github.io/\" target=\"_blank\">Citation File Format (CFF)</a>. While CodeMeta provides you with a more comprehensive description, CFF is a more lightweight, good-enough approach to software (with built-in support by GitHub) citation. Both provide tools (<a href=\"https://codemeta.github.io/codemeta-generator/\" target=\"_blank\">CodeMeta generator</a>, <a href=\"https://citation-file-format.github.io/cff-initializer-javascript/#/\" target=\"_blank\">CFFINIT</a>)to easily generate a working citation file. Once having the file, be sure to add it to the root path of your code repo.",
+                    "evidence": [
+                        {
+                            "valid": false,
+                            "message": "No matching files found for language <CodeMeta> in repository searching by extensions or filenames\nNo matching files found for language <Citation File Format> in repository searching by extensions or filenames"
+                        }
+                    ],
+                    "required_for_next_level_badge": false
+                }
+            },
+            "coverage": {
+                "percentage": 0,
+                "total_subcriteria": 1,
+                "success_subcriteria": 0
+            }
+        }
+    },
+    "badge": {
+        "software": {
+            "criteria": {
+                "bronze": {
+                    "to_fulfill": [
+                        "QC.Doc",
+                        "QC.Acc",
+                        "QC.Lic"
+                    ],
+                    "missing": [
+                        "QC.Doc",
+                        "QC.Lic"
+                    ],
+                    "fulfilled": [
+                        "QC.Acc"
+                    ]
+                },
+                "silver": {
+                    "to_fulfill": [
+                        "QC.Doc",
+                        "QC.Ver",
+                        "QC.Met",
+                        "QC.Acc",
+                        "QC.Lic"
+                    ],
+                    "missing": [
+                        "QC.Met",
+                        "QC.Doc",
+                        "QC.Lic"
+                    ],
+                    "fulfilled": [
+                        "QC.Ver",
+                        "QC.Acc"
+                    ]
+                },
+                "gold": {
+                    "to_fulfill": [
+                        "QC.Doc",
+                        "QC.Ver",
+                        "QC.Met",
+                        "QC.Acc",
+                        "QC.Lic",
+                        "QC.Uni",
+                        "QC.Sty",
+                        "QC.Sec"
+                    ],
+                    "missing": [
+                        "QC.Doc",
+                        "QC.Met",
+                        "QC.Lic",
+                        "QC.Uni",
+                        "QC.Sty"
+                    ],
+                    "fulfilled": [
+                        "QC.Ver",
+                        "QC.Sec",
+                        "QC.Acc"
+                    ]
+                }
+            },
+            "data": {}
+        }
+    }
+}
